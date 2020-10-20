@@ -118,7 +118,7 @@ export default {
              let CurrentDate = new Date();
                let GivenDate = new Date(this.date);
 
-                if (this.title && this.description && this.date && this.time && GivenDate > CurrentDate) {
+                if (this.title && this.description && this.date && this.time && GivenDate >= CurrentDate) {
             let loader = this.$loading.show({
                 // Optional parameters
                 canCancel: false,
@@ -178,7 +178,7 @@ export default {
     if (GivenDate < CurrentDate) {
         this.errors.push('Select a date that is greater than today');
       }
-
+   event.preventDefault();
         }
     },
     created() {
